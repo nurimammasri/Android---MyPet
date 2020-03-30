@@ -98,9 +98,9 @@ public class ListPetAdapter extends RecyclerView.Adapter<ListPetAdapter.ListView
 
         ListViewHolder(View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.image_hewan);
-            tvName = itemView.findViewById(R.id.nama);
-            tvDetail = itemView.findViewById(R.id.keterangan);
+            imgPhoto = itemView.findViewById(R.id.image_pet);
+            tvName = itemView.findViewById(R.id.title);
+            tvDetail = itemView.findViewById(R.id.description);
             tvRating = itemView.findViewById(R.id.rating);
 
         }

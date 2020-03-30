@@ -111,9 +111,9 @@ package com.example.mypet.Adapter;
 
             CardViewViewHolder(View itemView) {
                 super(itemView);
-                imgPhoto = itemView.findViewById(R.id.image_hewan);
-                tvName = itemView.findViewById(R.id.judul);
-                tvDetail = itemView.findViewById(R.id.keterangan);
+                imgPhoto = itemView.findViewById(R.id.image_pet);
+                tvName = itemView.findViewById(R.id.title);
+                tvDetail = itemView.findViewById(R.id.description);
                 btnMore = itemView.findViewById(R.id.more);
                 btnFavorite = itemView.findViewById(R.id.favorite);
                 tvRating = itemView.findViewById(R.id.rating);

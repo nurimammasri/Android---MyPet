@@ -19,7 +19,7 @@
         android:layout_centerVertical="true">
 
         <ImageView
-            android:id="@+id/image_hewan"
+            android:id="@+id/image_pet"
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:background="@drawable/background_image"
@@ -42,9 +42,8 @@
 
     </FrameLayout>
 
-
     <TextView
-        android:id="@+id/nama"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -59,10 +58,10 @@
         tools:text="Nama Hewan" />
 
     <com.codesgood.views.JustifiedTextView
-        android:id="@+id/keterangan"
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nama"
+        android:layout_below="@+id/title"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/image_layout"
@@ -70,7 +69,7 @@
         android:justificationMode="inter_word"
         android:maxLines="5"
         android:textColor="@color/black"
-        tools:text="Keterangan Hewan"
-        tools:ignore="UnusedAttribute" />
+        tools:ignore="UnusedAttribute"
+        tools:text="Keterangan Hewan" />
 </RelativeLayout>
 

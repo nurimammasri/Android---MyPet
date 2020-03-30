@@ -18,36 +18,33 @@ import com.example.mypet.R;
 
 public class MoreDetailPets extends AppCompatActivity {
     ImageView imagePets, ic_favourite;
-    TextView namePet, detailPets, detailMorePets, detailRating;
+    TextView title, descPets, bioPets, detailRating;
     Boolean is_favourite = false;
     AppCompatRatingBar RatingBar;
     TextView getRating;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.more_detail_pet);
 
-        imagePets= findViewById(R.id.image_hewan);
-        namePet = findViewById(R.id.tv_item_namapet);
-        detailMorePets = findViewById(R.id.detail_more_pet);
-        detailPets = findViewById(R.id.deskripsi);
+        imagePets= findViewById(R.id.image_pet);
+        title = findViewById(R.id.title);
+        bioPets = findViewById(R.id.bio);
+        descPets = findViewById(R.id.description);
         detailRating = findViewById(R.id.rating);
         ic_favourite = findViewById(R.id.ic_favourite);
 
-        RatingBar = findViewById(R.id.penilaian);
+        RatingBar = findViewById(R.id.star_rating);
         getRating = findViewById(R.id.rate);
 
         tampilDetail();
-
 
         ic_favourite.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                if (is_favourite == false) {
+                if (!is_favourite) {
                     is_favourite = true;
                     ic_favourite.setColorFilter(Color.RED);
 
@@ -63,12 +60,12 @@ public class MoreDetailPets extends AppCompatActivity {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float nilai, boolean b) {
 
-                getRating.setText("Rating: "+nilai);
+                String textRating = "Rating: "+nilai;
+                getRating.setText(textRating);
             }
         });
 
     }
-
 
     private void tampilDetail() {
         Intent intent = getIntent();
@@ -79,25 +76,19 @@ public class MoreDetailPets extends AppCompatActivity {
         String deskripsi = intent.getStringExtra("DESKRIPSI");
         String rating = intent.getStringExtra("RATING");
 
-
-        // tampilkan data di titlebar
         getSupportActionBar().setTitle(judul);
         getSupportActionBar().show();
-        namePet.setText(judul);
+        title.setText(judul);
 
-        // tampilkan gambar
         Glide.with(this)
                 .load(foto)
                 .apply(new RequestOptions().override(350, 550))
                 .into(imagePets);
 
-        // tampilkan data judul, banyak halaman dll
-        detailMorePets.setText(about);
+        bioPets.setText(about);
 
-        // tampilkan data deskripsi
-        detailPets.setText(deskripsi);
+        descPets.setText(deskripsi);
 
-        // tampilkan data rating
         detailRating.setText(rating);
     }
 }

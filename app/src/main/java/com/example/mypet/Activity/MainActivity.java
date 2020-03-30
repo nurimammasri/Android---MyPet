@@ -1,4 +1,4 @@
-package com.example.mypet;
+package com.example.mypet.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,21 +11,20 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mypet.Activity.AboutActivity;
 import com.example.mypet.Adapter.CardViewPetAdapter;
 import com.example.mypet.Adapter.GridPetAdapter;
 import com.example.mypet.Adapter.ListPetAdapter;
 import com.example.mypet.Model.Pet;
 import com.example.mypet.Model.PetData;
+import com.example.mypet.R;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private String title = "Mode List";
-    //untuk deklarasi recycler view
     private RecyclerView rvPets;
-    private ArrayList<Pet> list = new  ArrayList<>();
+    private ArrayList<Pet> list = new ArrayList<>();
 
 
     @Override
