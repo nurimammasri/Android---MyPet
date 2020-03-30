@@ -12,4 +12,7 @@
     <string name="nama">Akhmad Ainul Fiqran Rosady</string>
     <string name="imagedesc">imagePet</string>
     <string name="love">love</string>
+    <string name="list_view">List View</string>
+    <string name="card_view">Card View</string>
+    <string name="grid_view">Grid View</string>
 </resources>

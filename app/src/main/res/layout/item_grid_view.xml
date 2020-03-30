@@ -7,7 +7,7 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/image_buah"
+        android:id="@+id/image_hewan"
         android:layout_width="205dp"
         android:layout_height="205dp"
         android:background="@color/blue01"

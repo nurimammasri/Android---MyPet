@@ -1,4 +1,4 @@
-package com.example.mypet.Activity;
+package com.example.mypet;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,16 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mypet.Activity.AboutActivity;
 import com.example.mypet.Adapter.CardViewPetAdapter;
+import com.example.mypet.Adapter.GridPetAdapter;
+import com.example.mypet.Adapter.ListPetAdapter;
 import com.example.mypet.Model.Pet;
 import com.example.mypet.Model.PetData;
-import com.example.mypet.R;
 
 import java.util.ArrayList;
 
@@ -52,6 +55,32 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void showRecyclerList() {
+        rvPets.setLayoutManager(new LinearLayoutManager(this));
+        ListPetAdapter ListPetAdapter = new ListPetAdapter(list);
+        rvPets.setAdapter(ListPetAdapter);
+
+        ListPetAdapter.setOnItemClickCallback(new ListPetAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Pet data) {
+                showSelectedPet(data);
+            }
+        });
+    }
+
+    private void showRecyclerGrid() {
+        rvPets.setLayoutManager(new GridLayoutManager(this, 2));
+        GridPetAdapter gridHeroAdapter = new GridPetAdapter(list);
+        rvPets.setAdapter(gridHeroAdapter);
+
+        gridHeroAdapter.setOnItemClickCallback(new GridPetAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Pet data) {
+                showSelectedPet(data);
+            }
+        });
+    }
+
     private void setActionBarTitle(String title) {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(title);
@@ -75,9 +104,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setMode(int selectedMode) {
-        if (selectedMode == R.id.menu_about) {
-            Intent goToAbout = new Intent(MainActivity.this, AboutActivity.class);
-            startActivity(goToAbout);
+        switch (selectedMode) {
+            case R.id.menu_about:
+                Intent goToAbout = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(goToAbout);
+                break;
+            case R.id.action_list:
+                title = "Mode List";
+                showRecyclerList();
+                break;
+            case R.id.action_grid:
+                title = "Mode Grid";
+                showRecyclerGrid();
+                break;
+            case R.id.action_cardview:
+                title = "Mode CardView";
+                showRecyclerCardView();
+                break;
+
         }
     }
 }
