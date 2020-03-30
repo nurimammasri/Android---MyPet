@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    tools:context=".Activity.CardView">
+
+    <FrameLayout
+        android:id="@+id/image_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/image_buah"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/background_image"
+            android:contentDescription="@string/imagedesc"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_rating"
+            android:drawableEnd="@drawable/ic_star_black_24dp"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingHorizontal="8dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:text="@string/rating" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/image_layout"
+        android:gravity="center_horizontal"
+        android:textColor="@color/blue01"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="Nama Hewan" />
+
+    <com.codesgood.views.JustifiedTextView
+        android:id="@+id/keterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@+id/image_layout"
+        android:ellipsize="end"
+        android:justificationMode="inter_word"
+        android:maxLines="5"
+        android:textColor="@color/black"
+        tools:text="Keterangan Hewan"
+        tools:ignore="UnusedAttribute" />
+</RelativeLayout>
+

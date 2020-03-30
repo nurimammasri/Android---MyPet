@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My Pet</string>
+    <string name="more">More</string>
+    <string name="favorite">Favorite</string>
+    <string name="more_detail">More Detail</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="rating">Rating</string>
+    <string name="sumber">Sumber</string>
+    <string name="url">URL</string>
+    <string name="about">About</string>
+    <string name="email">irfanbluewooky01@gmail.com</string>
+    <string name="nama">Akhmad Ainul Fiqran Rosady</string>
+    <string name="imagedesc">imagePet</string>
+    <string name="love">love</string>
+</resources>
