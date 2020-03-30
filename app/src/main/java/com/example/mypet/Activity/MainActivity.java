@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedPet(Pet Pet) {
-        Toast.makeText(this, "Kamu memilih " + Pet.getNamaHewan(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Kamu memilih " + Pet.getNamePet(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

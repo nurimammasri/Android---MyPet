@@ -55,20 +55,20 @@ package com.example.mypet.Adapter;
                     .apply(new RequestOptions().override(350, 550))
                     .into(holder.imgPhoto);
 
-            holder.tvName.setText(pet.getNamaHewan());
-            holder.tvDetail.setText(pet.getDetail());
+            holder.tvName.setText(pet.getNamePet());
+            holder.tvDetail.setText(pet.getDescription());
             holder.tvRating.setText(pet.getRating());
 
             holder.btnMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(holder.itemView.getContext(), listPet.get(holder.getAdapterPosition()).getNamaHewan(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), listPet.get(holder.getAdapterPosition()).getNamePet(), Toast.LENGTH_SHORT).show();
 
                     Intent goToDetail = new Intent(v.getContext().getApplicationContext(), MoreDetailPets.class);
                     goToDetail.putExtra("FOTO", pet.getPhoto());
-                    goToDetail.putExtra("NAMA_HEWAN", pet.getNamaHewan());
-                    goToDetail.putExtra("ABOUT", pet.getMoreDetailHewan());
-                    goToDetail.putExtra("DESKRIPSI", pet.getDetail());
+                    goToDetail.putExtra("NAMA_HEWAN", pet.getNamePet());
+                    goToDetail.putExtra("ABOUT", pet.getBioPet());
+                    goToDetail.putExtra("DESKRIPSI", pet.getDescription());
                     goToDetail.putExtra("RATING", pet.getRating());
 
                     v.getContext().startActivity(goToDetail);
@@ -78,7 +78,7 @@ package com.example.mypet.Adapter;
             holder.btnFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(holder.itemView.getContext(), listPet.get(holder.getAdapterPosition()).getNamaHewan()+" telah ditambahkan dalam list Favorite Anda", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), listPet.get(holder.getAdapterPosition()).getNamePet()+" telah ditambahkan dalam list Favorite Anda", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -89,9 +89,9 @@ package com.example.mypet.Adapter;
 
                     Intent goToDetail = new Intent(v.getContext().getApplicationContext(), MoreDetailPets.class);
                     goToDetail.putExtra("FOTO", pet.getPhoto());
-                    goToDetail.putExtra("NAMA_BUAH", pet.getNamaHewan());
-                    goToDetail.putExtra("ABOUT", pet.getMoreDetailHewan());
-                    goToDetail.putExtra("DESKRIPSI", pet.getDetail());
+                    goToDetail.putExtra("NAMA_HEWAN", pet.getNamePet());
+                    goToDetail.putExtra("ABOUT", pet.getBioPet());
+                    goToDetail.putExtra("DESKRIPSI", pet.getDescription());
                     goToDetail.putExtra("RATING", pet.getRating());
 
                     v.getContext().startActivity(goToDetail);

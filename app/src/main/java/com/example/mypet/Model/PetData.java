@@ -162,10 +162,10 @@ import java.util.ArrayList;
             ArrayList<Pet> list = new ArrayList<>();
             for (int position = 0; position < petNames.length; position++) {
                 Pet pet = new Pet();
-                pet.setNamaHewan(petNames[position]);
-                pet.setDetail(petDetails[position]);
+                pet.setNamePet(petNames[position]);
+                pet.setDescription(petDetails[position]);
                 pet.setPhoto(petImages[position]);
-                pet.setMoreDetailHewan(moreDetailPet[position]);
+                pet.setBioPet(moreDetailPet[position]);
                 pet.setRating(ratingPet[position]);
                 list.add(pet);
             }

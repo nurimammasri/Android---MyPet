@@ -38,7 +38,7 @@ public class MoreDetailPets extends AppCompatActivity {
         RatingBar = findViewById(R.id.star_rating);
         getRating = findViewById(R.id.rate);
 
-        tampilDetail();
+        showDetail();
 
         ic_favourite.setOnClickListener(new View.OnClickListener() {
 
@@ -67,27 +67,27 @@ public class MoreDetailPets extends AppCompatActivity {
 
     }
 
-    private void tampilDetail() {
+    private void showDetail() {
         Intent intent = getIntent();
 
-        int foto = intent.getIntExtra("FOTO", 0);
-        String judul = intent.getStringExtra("NAMA_HEWAN");
+        int photo = intent.getIntExtra("FOTO", 0);
+        String tvTitle = intent.getStringExtra("NAMA_HEWAN");
         String about = intent.getStringExtra("ABOUT");
-        String deskripsi = intent.getStringExtra("DESKRIPSI");
+        String description = intent.getStringExtra("DESKRIPSI");
         String rating = intent.getStringExtra("RATING");
 
-        getSupportActionBar().setTitle(judul);
+        getSupportActionBar().setTitle(tvTitle);
         getSupportActionBar().show();
-        title.setText(judul);
+        title.setText(tvTitle);
 
         Glide.with(this)
-                .load(foto)
+                .load(photo)
                 .apply(new RequestOptions().override(350, 550))
                 .into(imagePets);
 
         bioPets.setText(about);
 
-        descPets.setText(deskripsi);
+        descPets.setText(description);
 
         detailRating.setText(rating);
     }

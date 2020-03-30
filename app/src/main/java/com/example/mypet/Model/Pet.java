@@ -1,27 +1,27 @@
 package com.example.mypet.Model;
 
 public class Pet {
-    private String namaHewan;
-
-    public String getNamaHewan() {
-        return namaHewan;
-    }
-
-    public void setNamaHewan(String namaHewan) {
-        this.namaHewan = namaHewan;
-    }
-
-    private String detail;
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
-
+    private String namePet;
+    private String description;
     private int photo;
+    private String bioPet;
+    private String rating;
+
+    public String getNamePet() {
+        return namePet;
+    }
+
+    public void setNamePet(String namePet) {
+        this.namePet = namePet;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getPhoto() {
         return photo;
@@ -31,17 +31,13 @@ public class Pet {
         this.photo = photo;
     }
 
-    private String moreDetailHewan;
-
-    public String getMoreDetailHewan() {
-        return moreDetailHewan;
+    public String getBioPet() {
+        return bioPet;
     }
 
-    public void setMoreDetailHewan(String moreDetailHewan) {
-        this.moreDetailHewan = moreDetailHewan;
+    public void setBioPet(String bioPet) {
+        this.bioPet = bioPet;
     }
-
-    public String rating;
 
     public String getRating() {
         return rating;

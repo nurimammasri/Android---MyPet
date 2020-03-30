@@ -58,9 +58,9 @@ public class GridPetAdapter extends RecyclerView.Adapter<GridPetAdapter.GridView
 
                 Intent goToDetail = new Intent(v.getContext().getApplicationContext(), MoreDetailPets.class);
                 goToDetail.putExtra("FOTO", Pet.getPhoto());
-                goToDetail.putExtra("NAMA_BUAH", Pet.getNamaHewan());
-                goToDetail.putExtra("ABOUT", Pet.getMoreDetailHewan());
-                goToDetail.putExtra("DESKRIPSI", Pet.getDetail());
+                goToDetail.putExtra("NAMA_HEWAN", Pet.getNamePet());
+                goToDetail.putExtra("ABOUT", Pet.getBioPet());
+                goToDetail.putExtra("DESKRIPSI", Pet.getDescription());
                 goToDetail.putExtra("RATING", Pet.getRating());
 
                 v.getContext().startActivity(goToDetail);
